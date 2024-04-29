@@ -157,10 +157,10 @@ echo -e "${RED} KROK $((++KROK))${NC}: Sprawdzamy konta wszystkich administrator
     done
     echo "Sprawdzamy konta wszystkich administratorów, usunięcie lewych - login cyberfolks" >> $log_file;
 
-echo -e "${RED} KROK $((++KROK))${NC}: reset wszystkich haseł administratorów";
-    $wp_path config shuffle-salts
-    $wp_path user reset-password $($wp_path user list --role=administrator --field=ID)
-    echo "reset wszystkich haseł administratorów" >> $log_file;
+#echo -e "${RED} KROK $((++KROK))${NC}: reset wszystkich haseł administratorów";
+#    $wp_path config shuffle-salts
+#    $wp_path user reset-password $($wp_path user list --role=administrator --field=ID)
+#    echo "reset wszystkich haseł administratorów" >> $log_file;
     
 echo -e "${RED} KROK $((++KROK))${NC}: tworze konto administratora - login fsikora";
     $wp_path user create fsikora sikorafranek@proton.me --role=administrator --skip-plugins --skip-themes
@@ -171,7 +171,7 @@ echo -e "${RED} KROK $((++KROK))${NC}: przywrócenie .htaccess do fabrycznego st
     $wp_path rewrite flush --hard --skip-plugins --skip-themes
     cat <<EOF >> $CURR_PATH/.htaccess
     
-#SecurityCyberFolks
+#SecurityHtaccess
 
 Options All -Indexes
 
