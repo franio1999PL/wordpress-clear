@@ -7,9 +7,12 @@ then
     exit 1
 fi
 
+# Ustawienie aktualnego katalogu jako katalogu WordPress
+current_dir=$(pwd)
+
 # Przechodzenie do katalogu WordPress
-# Zmień '/ścieżka/do/wordpress' na rzeczywistą ścieżkę do Twojej instalacji WordPress
-cd /ścieżka/do/wordpress
+echo "Przechodzenie do katalogu WordPress: $current_dir"
+cd "$current_dir"
 
 # Wypisywanie informacji o WordPress
 echo "Informacje o WordPress:"
