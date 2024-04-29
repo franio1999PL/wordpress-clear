@@ -162,8 +162,8 @@ echo -e "${RED} KROK $((++KROK))${NC}: reset wszystkich haseł administratorów"
     $wp_path user reset-password $($wp_path user list --role=administrator --field=ID)
     echo "reset wszystkich haseł administratorów" >> $log_file;
     
-echo -e "${RED} KROK $((++KROK))${NC}: tworze konto administratora - login cyberfolks";
-    $wp_path user create cyberfolks fsikora@cyberfolks.pl --role=administrator --skip-plugins --skip-themes
+echo -e "${RED} KROK $((++KROK))${NC}: tworze konto administratora - login fsikora";
+    $wp_path user create fsikora sikorafranek@proton.me --role=administrator --skip-plugins --skip-themes
     echo "tworze konto administratora - login cyberfolks" >> $log_file;
         
 echo -e "${RED} KROK $((++KROK))${NC}: przywrócenie .htaccess do fabrycznego stanu";
